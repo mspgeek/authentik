@@ -4,4 +4,4 @@ FROM ghcr.io/goauthentik/server:2025.6.3
 WORKDIR /
 
 # Run the Authentik server directly using the package’s internal runner
-CMD ["python", "-m", "authentik.__main__", "server"]
+CMD ["dumb-init", "--", "ak", "server"]
