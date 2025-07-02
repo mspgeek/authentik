@@ -1,0 +1,7 @@
+FROM ghcr.io/goauthentik/server:2025.6.3
+
+# Set working directory to root of app where manage.py is located
+WORKDIR /
+
+# Run the Authentik server directly using the package’s internal runner
+CMD ["python", "-m", "authentik.__main__", "worker"]
